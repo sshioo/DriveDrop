@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\*\shell\DriveDrop]
+@="Subir con DriveDrop"
+"Icon"="C:\Users\ashla\OneDrive\Documentos\DriveDrop\assets\drivedrop.ico"
+
+[HKEY_CURRENT_USER\Software\Classes\*\shell\DriveDrop\command]
+@="\"C:\\Users\\ashla\\OneDrive\\Documentos\\DriveDrop\\app\\drivedrop.bat\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\DriveDrop]
+@="Subir con DriveDrop"
+"Icon"="C:\Users\ashla\OneDrive\Documentos\DriveDrop\assets\drivedrop.ico"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\DriveDrop\command]
+@="\"C:\\Users\\ashla\\OneDrive\\Documentos\\DriveDrop\\app\\drivedrop.bat\" \"%1\""
