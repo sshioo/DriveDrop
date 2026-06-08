@@ -138,17 +138,23 @@ No se necesita:
 
 ## Instalación
 
-### 1. Descargar DriveDrop
+### Opción recomendada: descargar desde Releases
 
-Descarga el ejecutable desde la sección de Releases del repositorio:
+Puedes descargar la última versión de DriveDrop desde GitHub Releases:
+
+[Descargar DriveDrop](https://github.com/sshioo/DriveDrop/releases)
+
+En la sección **Assets**, descarga el archivo:
 
 ```text
 DriveDrop.exe
 ```
 
-### 2. Instalar Google Drive para escritorio
+> Nota: Windows puede mostrar una advertencia de seguridad porque el ejecutable no está firmado digitalmente. Esto es normal en proyectos personales o de código abierto.
 
-Si todavía no lo tienes instalado, descárgalo desde:
+### Instalar Google Drive para escritorio
+
+Si todavía no tienes Google Drive para escritorio, descárgalo desde:
 
 ```text
 https://www.google.com/drive/download/
@@ -164,9 +170,19 @@ G:\Mi unidad
 C:\Users\usuario\Google Drive
 ```
 
-### 3. Configurar el menú contextual
+### Guardar el ejecutable
 
-Ejecuta el instalador del menú contextual incluido en el proyecto o importa el archivo `.reg`.
+Guarda `DriveDrop.exe` en una carpeta fija de tu equipo, por ejemplo:
+
+```text
+C:\Users\TU_USUARIO\AppData\Local\DriveDrop\DriveDrop.exe
+```
+
+Esto ayuda a que el menú contextual siempre apunte al mismo lugar.
+
+### Configurar el menú contextual
+
+Configura el menú contextual para que apunte a la ruta donde guardaste `DriveDrop.exe`.
 
 Después de configurarlo, aparecerá la opción:
 
@@ -179,6 +195,8 @@ En Windows 11, puede aparecer dentro de:
 ```text
 Mostrar más opciones
 ```
+
+Actualmente, DriveDrop v0.1.0 incluye el ejecutable como descarga directa. En próximas versiones se publicará un paquete `.zip` con instalador, desinstalador e iconos listos para usar.
 
 ---
 
@@ -225,7 +243,7 @@ DriveDrop/
 Clonar el repositorio:
 
 ```powershell
-git clone https://github.com/TU_USUARIO/DriveDrop.git
+git clone https://github.com/sshioo/DriveDrop.git
 cd DriveDrop
 ```
 
@@ -253,29 +271,53 @@ El ejecutable se generará en:
 dist\DriveDrop.exe
 ```
 
+Probar el ejecutable:
+
+```powershell
+.\dist\DriveDrop.exe "C:\ruta\archivo.pdf"
+```
+
 ---
 
 ## Publicación en Releases
 
-Para distribuir DriveDrop, se recomienda subir el ejecutable a GitHub Releases en lugar de incluirlo directamente en el repositorio.
+Para distribuir DriveDrop, el ejecutable se publica en GitHub Releases en lugar de subirse directamente al repositorio.
 
-Crear un tag:
+Release actual:
+
+```text
+v0.1.0
+```
+
+Asset principal:
+
+```text
+DriveDrop.exe
+```
+
+Esto permite que los usuarios descarguen la aplicación sin clonar el repositorio.
+
+Para crear una nueva versión:
 
 ```powershell
 git tag v0.1.0
 git push origin v0.1.0
 ```
 
-Luego crear un release en GitHub con el título:
-
-```text
-DriveDrop v0.1.0
-```
-
-Y adjuntar el archivo:
+Luego se crea un nuevo release en GitHub y se adjunta:
 
 ```text
 dist\DriveDrop.exe
+```
+
+En futuras versiones se recomienda publicar un paquete `.zip` con:
+
+```text
+DriveDrop.exe
+install_context_menu.bat
+uninstall_context_menu.bat
+assets/drivedrop.ico
+README.txt
 ```
 
 ---
